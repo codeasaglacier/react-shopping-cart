@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import data from './data';
 
@@ -13,7 +13,11 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
+		setCart( [ ...cart, item ] )
+		console.log( 'cart:', cart)
 	};
+//pass a console.log with an anonymous func and a dependency array with the item consoled
+	// useEffect( () => console.log( cart ), [ cart ])
 
 	return (
 		<div className="App">
